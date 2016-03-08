@@ -7,12 +7,12 @@ Main idea is to be able to push changes in RethinkDB to clients via SignalR.
 # WebApi project
 
 ## Hubs
-A simple WebApi project (Owin based), that has two SignalR Hubs:
+A simple WebApi project (Owin based) that has two SignalR Hubs:
 * CoreEventsHub - For infrastructure events saved to a RethinkDB table.
 * ClientPushHub - For system time changes.
 
 ## Workers 
-It has two workers that are instantiated in ``Startup.cs``:
+Two workers are instantiated in ``Startup.cs``:
 ```
 // Workers
 ...
@@ -24,7 +24,7 @@ Task.Factory.StartNew(
 ...
 ```
 
-The ``BackgroundServerTimeTimer`` class is simple inherited from ``IRegisteredObject``, thus registered to the hosting environment:
+The ``BackgroundServerTimeTimer`` class is simply inherited from ``IRegisteredObject`` thus registered to the hosting environment:
 ```
 public class BackgroundServerTimeTimer : IRegisteredObject
 {
@@ -55,7 +55,7 @@ public class BackgroundServerTimeTimer : IRegisteredObject
 }
 ```
 
-The ``BackgroundEventSubscriber`` class is however static and is instantiated with ``TaskFacory``:
+The ``BackgroundEventSubscriber`` class is however static and is instantiated with ``TaskFactory``:
 
 ```
 public static class BackgroundEventSubscriber
