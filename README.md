@@ -1,7 +1,7 @@
 Realtime Data API with SignalR and RethinkDB
 ========================
 
-This project is an example of how you can utilize the powerful real time features of RethinkDB with your WepApi APIs.
+This project is an example of how you can utilize the powerful change feed feature that RethinkDB offers, with your WebApi APIs.
 Main idea is to be able to push changes in RethinkDB to clients via SignalR.
 
 # WebApi project
